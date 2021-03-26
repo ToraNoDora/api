@@ -4,7 +4,6 @@ from peewee import *
 # В нашем примере у нас это просто файл базы
 conn = SqliteDatabase('NoteNew.db')
 
-# ТУТ БУДЕТ КОД НАШИХ МОДЕЛЕЙ
 # Определяем базовую модель о которой будут наследоваться остальные
 class BaseModel(Model):
     class Meta:
@@ -37,14 +36,10 @@ class TagNote(BaseModel):
 # Создаем курсор - специальный объект для запросов и получения данных с базы
 cursor = conn.cursor()
 
-
-
-# conn.create_tables([Note], safe = True)
-# conn.create_tables([Tag], safe = True)
-# conn.create_tables([TagNote], safe = True)
-
-
-# ТУТ БУДЕТ НАШ КОД РАБОТЫ С БАЗОЙ ДАННЫХ
+# Закомментировать после первого запуска
+conn.create_tables([Note], safe = True)
+conn.create_tables([Tag], safe = True)
+conn.create_tables([TagNote], safe = True)
 
 # Не забываем закрыть соединение с базой данных
 conn.close()
