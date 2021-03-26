@@ -14,7 +14,6 @@ class Note(BaseModel):
     id = AutoField(column_name='NoteId')
     title = TextField(column_name='Title', null=True)
     text = TextField(column_name='Text', null=True)
-    # tags = CharField(column_name='Tags', null=True) # CharField ?? смотреть на джоины
     
     class Meta:
         table_name = 'Note'
