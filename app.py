@@ -6,16 +6,6 @@ from playhouse.shortcuts import model_to_dict
 app = Flask(__name__)
 
 
-# Доделать put-запрос +
-# Решить проблему с id, если нет (отсоритировать по убыванию и первый последний)
-# Исправить тесты
-# модель базы, в тегах список внутри строки +
-# Переписать ВСЕ ЗАПИСИ +
-# Переписать Создание +
-# Переписать ИЗМЕНЕНИЕ +
-# Переписать Удаление +
-
-
 # Все записи
 @app.route("/notes/api/notes", methods=["GET"])
 def get_notes():
@@ -95,7 +85,7 @@ def create_note():
     return jsonify(note_post), 201
 
 
-# Изменение записи ++++
+# Изменение записи
 @app.route("/notes/api/notes/<int:note_id>", methods=["PUT"])
 def update_note(note_id):
     if not request.json:
